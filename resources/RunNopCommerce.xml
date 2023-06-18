@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="NopCommerce - UI Automation">
-  <test name="Run on Chrome">
+  <test name="Run on Firefox">
     <classes>
       <class name="com.nopcommerce.users.Level_01_Register"/>
     </classes>
