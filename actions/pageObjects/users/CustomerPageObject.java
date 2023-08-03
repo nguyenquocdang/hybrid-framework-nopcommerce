@@ -1,11 +1,11 @@
-package pageObjects;
+package pageObjects.users;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.CustomerPageUI;
+import pageUIs.users.CustomerPageUI;
 
-public class CustomerPageObject extends BasePage{
+public class CustomerPageObject extends SideBarMyAccountPageObject{
 	private WebDriver driver;
 	
 	

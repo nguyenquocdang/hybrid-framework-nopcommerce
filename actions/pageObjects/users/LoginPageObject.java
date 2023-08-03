@@ -1,15 +1,23 @@
-package pageObjects;
+package pageObjects.users;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.LoginPageUI;
+import commons.PageGeneratorManager;
+import pageUIs.users.LoginPageUI;
 
 public class LoginPageObject extends BasePage {
 	private WebDriver driver;
 	
 	public LoginPageObject(WebDriver driver) {
 		this.driver = driver;
+	}
+	
+	public HomePageObject loginAsUser(String emailAddress, String password) {
+		enterToEmailTextbox(emailAddress);
+		enterToPasswordTextbox(password);
+		clickToLoginButton();
+		return PageGeneratorManager.getHomePage(driver);
 	}
 
 	public void enterToEmailTextbox(String emailAddress) {

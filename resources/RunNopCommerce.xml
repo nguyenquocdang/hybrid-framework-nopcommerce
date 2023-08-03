@@ -4,9 +4,10 @@
 	<test name="Run on Firefox">
 		<parameter name="browser" value="Firefox" />
 		<classes>
-			<class name="com.nopcommerce.users.Level_05_Page_Factory" />
+			<class name="com.nopcommerce.users.Level_10_Global_Contants" />
 		</classes>
 	</test>
+
 
 
 

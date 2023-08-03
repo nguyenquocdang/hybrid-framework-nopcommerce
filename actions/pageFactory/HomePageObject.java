@@ -1,33 +1,47 @@
 package pageFactory;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-import commons.BasePage;
-import pageUIs.HomePageUI;
+import pageFactory.BasePageFactory;
 
-public class HomePageObject extends BasePage{
+public class HomePageObject extends BasePageFactory{
 	WebDriver driver;
 	
 	public HomePageObject(WebDriver driver) {
 		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
+	
+	@FindBy(css="a.ico-register")
+	WebElement registerLink;
+	
+	@FindBy(css="a.ico-login")
+	WebElement loginLink;
+	
+	@FindBy(css="a.ico-account")
+	WebElement myAccountLink;
+	
 
 	public void clickToRegisterLink() {
-		waitForElementClickable(driver, HomePageUI.REGISTER_LINK);
-		clickToElement(driver, HomePageUI.REGISTER_LINK);
+		waitForElementClickable(driver, registerLink);
+		clickToElement(driver, registerLink);
 	}
 
 	public void clickToLoginLink() {
-		waitForElementClickable(driver, HomePageUI.LOGIN_LINK);
-		clickToElement(driver, HomePageUI.LOGIN_LINK);
+		waitForElementClickable(driver, loginLink);
+		clickToElement(driver, loginLink);
 	}
 
 	public void clickToMyAccountLink() {
-		waitForElementClickable(driver, HomePageUI.MY_ACCOUNT_LINK);
-		clickToElement(driver, HomePageUI.MY_ACCOUNT_LINK);
+		waitForElementClickable(driver, myAccountLink);
+		clickToElement(driver, myAccountLink);
 	}
 
 	
 	
 
 }
+

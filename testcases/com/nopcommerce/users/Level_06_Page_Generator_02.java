@@ -20,7 +20,7 @@ import pageObjects.users.HomePageObject;
 import pageObjects.users.LoginPageObject;
 import pageObjects.users.RegisterPageObject;
 
-public class Level_04_Multiple_Browser extends BaseTest{
+public class Level_06_Page_Generator_02 extends BaseTest{
 	private WebDriver driver;
 	private String emailAddress = getEmailAddress();
 	private HomePageObject homePage;
@@ -32,15 +32,16 @@ public class Level_04_Multiple_Browser extends BaseTest{
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = getBrowserDriver(browserName);
+		
+		homePage = new HomePageObject(driver);
 	}
 
 	@Test
 	public void Register_01_Empty_Data() {
-		homePage = new HomePageObject(driver);
+		// Hàm nào có sự kiện chuyển trang từ A qua B
+		// Thì sẽ đưa việc khởi tạo class B vào trong hàm đó luôn
+		registerPage = homePage.clickToRegisterLink();
 		
-		homePage.clickToRegisterLink();
-		
-		registerPage = new RegisterPageObject(driver);
 		registerPage.clickToRegisterButton();
 		
 		Assert.assertEquals(registerPage.getFirstNameErrorMessage(), "First name is required.");
@@ -52,12 +53,10 @@ public class Level_04_Multiple_Browser extends BaseTest{
 
 	@Test
 	public void Register_02_Invalid_Email() {
-		registerPage.clickToHomePageLogo();
-		homePage = new HomePageObject(driver);
-		homePage.clickToRegisterLink();
+		homePage  = registerPage.clickToHomePageLogo();
 		
-		registerPage = new RegisterPageObject(driver);
-
+		registerPage = homePage.clickToRegisterLink();
+		
 		registerPage.enterToFirstNameTextBox("John");
 		registerPage.enterToLastNameTextBox("Wick");
 		registerPage.enterToEmailTextBox("john@wick@gmail.com");
@@ -71,11 +70,9 @@ public class Level_04_Multiple_Browser extends BaseTest{
 
 	@Test
 	public void Register_03_Invalid_Password() {
-		registerPage.clickToHomePageLogo();
-		homePage = new HomePageObject(driver);
-		homePage.clickToRegisterLink();
+		homePage  = registerPage.clickToHomePageLogo();
 		
-		registerPage = new RegisterPageObject(driver);
+		registerPage = homePage.clickToRegisterLink();
 
 		registerPage.enterToFirstNameTextBox("John");
 		registerPage.enterToLastNameTextBox("Wick");
@@ -90,11 +87,9 @@ public class Level_04_Multiple_Browser extends BaseTest{
 
 	@Test
 	public void Register_04_Incorrect_Confirm_Password() {
-		registerPage.clickToHomePageLogo();
-		homePage = new HomePageObject(driver);
-		homePage.clickToRegisterLink();
+		homePage  = registerPage.clickToHomePageLogo();
 		
-		registerPage = new RegisterPageObject(driver);
+		registerPage = homePage.clickToRegisterLink();
 
 		registerPage.enterToFirstNameTextBox("John");
 		registerPage.enterToLastNameTextBox("Wick");
@@ -109,11 +104,9 @@ public class Level_04_Multiple_Browser extends BaseTest{
 
 	@Test
 	public void Register_05_Success() {
-		registerPage.clickToHomePageLogo();
-		homePage = new HomePageObject(driver);
-		homePage.clickToRegisterLink();
+		homePage  = registerPage.clickToHomePageLogo();
 		
-		registerPage = new RegisterPageObject(driver);
+		registerPage = homePage.clickToRegisterLink();
 
 		registerPage.enterToFirstNameTextBox("John");
 		registerPage.enterToLastNameTextBox("Wick");
@@ -125,20 +118,13 @@ public class Level_04_Multiple_Browser extends BaseTest{
 
 		Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
 
-		registerPage.clickToHomePageLogo();
-		homePage = new HomePageObject(driver);
+		homePage = registerPage.clickToHomePageLogo();
 
-		homePage.clickToLoginLink();
-		loginPage = new LoginPageObject(driver);
+		loginPage = homePage.clickToLoginLink();
 		
-		loginPage.enterToEmailTextbox(emailAddress);
-		loginPage.enterToPasswordTextbox("123456");
-		loginPage.clickToLoginButton();
+		homePage = loginPage.loginAsUser(emailAddress, "123456");
 		
-		homePage = new HomePageObject(driver);
-		homePage.clickToMyAccountLink();
-		
-		customerPage = new CustomerPageObject(driver);
+		customerPage = homePage.clickToMyAccountLink();
 		
 		Assert.assertEquals(customerPage.getFirstNameAttributeValue(), "John");
 		Assert.assertEquals(customerPage.getLastNameAttributeValue(), "Wick");

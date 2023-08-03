@@ -39,7 +39,35 @@ public class BaseTest {
 //		driver.manage().window().setSize(new Dimension(1920, 1080));
 //		driver.manage().window().setPosition(new Point(0, 0));
 		// driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT));
+		return driver;
+	}
+	
+	protected WebDriver getBrowserDriver(String browserName, String url) {
+		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+		switch (browserList) {
+		case CHROME:
+			// driver = WebDriverManager.chromedriver().create();
+			driver = new ChromeDriver();
+			break;
+		case FIREFOX:
+			// driver = WebDriverManager.firefoxdriver().create();
+			driver = new FirefoxDriver();
+			break;
+		case EDGE:
+			// driver = WebDriverManager.edgedriver().create();
+			driver = new EdgeDriver();
+			break;
+		default:
+			throw new RuntimeException("Browser name is not valid.");
+		}
+
+		driver.get(url);
+		driver.manage().window().maximize();
+//		driver.manage().window().setSize(new Dimension(1920, 1080));
+//		driver.manage().window().setPosition(new Point(0, 0));
+		// driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT));
 		return driver;
 	}
 	
