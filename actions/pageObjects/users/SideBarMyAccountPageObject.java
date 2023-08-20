@@ -8,6 +8,10 @@ import pageUIs.users.SideBarMyAccountPageUI;
 
 public class SideBarMyAccountPageObject extends BasePage{
 	WebDriver driver;
+	
+	public SideBarMyAccountPageObject (WebDriver driver) {
+		this.driver = driver;
+	}
 
 	public DownloadableProductPageObject openDownloadableProductPage() {
 		waitForElementClickable(driver, SideBarMyAccountPageUI.DOWNLOADABLE_PRODUCT_PAGE_LINK);

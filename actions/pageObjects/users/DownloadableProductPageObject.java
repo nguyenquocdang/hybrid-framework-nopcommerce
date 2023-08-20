@@ -8,6 +8,7 @@ public class DownloadableProductPageObject extends SideBarMyAccountPageObject {
 	WebDriver driver;
 	
 	public DownloadableProductPageObject(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 	}	
 	

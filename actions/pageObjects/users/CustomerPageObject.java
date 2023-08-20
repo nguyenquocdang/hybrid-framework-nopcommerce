@@ -12,10 +12,12 @@ public class CustomerPageObject extends SideBarMyAccountPageObject{
 	
 	
 	public CustomerPageObject(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 	}
 	
 	public CustomerPageObject(WebDriver driver, long timeout) {
+		super(driver);
 		this.driver = driver;
 		this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeout));
 	}
