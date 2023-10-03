@@ -2,14 +2,15 @@ package pageObjects.users;
 
 import org.openqa.selenium.WebDriver;
 
-import commons.BasePage;
+import commons.BaseElement;
 import commons.PageGeneratorManager;
 import pageUIs.users.SideBarMyAccountPageUI;
 
-public class SideBarMyAccountPageObject extends BasePage{
+public class SideBarMyAccountPageObject extends BaseElement{
 	WebDriver driver;
 	
 	public SideBarMyAccountPageObject (WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 	}
 

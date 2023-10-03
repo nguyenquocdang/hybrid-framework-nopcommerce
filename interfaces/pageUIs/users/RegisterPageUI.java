@@ -16,6 +16,4 @@ public class RegisterPageUI {
 	public static final String EMAIL_TEXTBOX = "XPath=//input[@id='Email']";
 	public static final String PASSWORD_TEXTBOX = "XPath=//input[@id='Password']";
 	public static final String CONFIRM_PASSWORD_TEXTBOX = "XPath=//input[@id='ConfirmPassword']";
-	
-	public static final String HOME_LOGO_IMAGE = "XPath=//div[@class='header-logo']//img";
 }

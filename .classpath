@@ -11,7 +11,30 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="libSelenium/testng-6.14.3.jar"/>
-	<classpathentry kind="lib" path="libSelenium/selenium-server-4.10.0.jar"/>
+	<classpathentry kind="lib" path="libAssertJ/assertj-core-3.24.2.jar"/>
+	<classpathentry kind="lib" path="libAssertJ/byte-buddy-1.12.21.jar"/>
+	<classpathentry kind="lib" path="libSelenium/selenium-server-4.11.0.jar"/>
+	<classpathentry kind="lib" path="libSelenium/testng-7.8.0.jar"/>
+	<classpathentry kind="lib" path="libLog4Jver2/log4j-api-2.19.0.jar"/>
+	<classpathentry kind="lib" path="libLog4Jver2/log4j-core-2.19.0.jar"/>
+	<classpathentry kind="lib" path="libReportNG/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="libReportNG/guice-3.0.jar"/>
+	<classpathentry kind="lib" path="libReportNG/reportng-1.1.4.jar" sourcepath="libReportNG/reportng-1.1.4-sources.jar"/>
+	<classpathentry kind="lib" path="libReportNG/velocity-1.4.jar"/>
+	<classpathentry kind="lib" path="libReportNG/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="libExtent5/extentreports-5.1.0.jar"/>
+	<classpathentry kind="lib" path="libExtent5/freemarker-2.3.32.jar"/>
+	<classpathentry kind="lib" path="libExtent5/gson-2.10.1.jar"/>
+	<classpathentry kind="lib" path="libExtent5/lombok-1.18.26.jar"/>
+	<classpathentry kind="lib" path="libExtent5/rxjava-3.1.6.jar"/>
+	<classpathentry kind="lib" path="libExtent5/reactive-streams-1.0.4.jar"/>
+	<classpathentry kind="lib" path="libAllure/allure-java-commons-2.24.0.jar"/>
+	<classpathentry kind="lib" path="libAllure/allure-model-2.24.0.jar"/>
+	<classpathentry kind="lib" path="libAllure/allure-test-filter-2.24.0.jar"/>
+	<classpathentry kind="lib" path="libAllure/allure-testng-2.24.0.jar"/>
+	<classpathentry kind="lib" path="libAllure/bsh-2.0b6.jar"/>
+	<classpathentry kind="lib" path="libAllure/jcommander-1.72.jar"/>
+	<classpathentry kind="lib" path="libAllure/slf4j-api-1.7.36.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

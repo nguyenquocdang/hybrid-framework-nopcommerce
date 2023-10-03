@@ -1,0 +1,18 @@
+[11-09-2023 22:45:31.685 INFO com.nopcommerce.users.Level_17_Extent_V2] - Starting delete all file in ReportNG screenshot
+[11-09-2023 22:45:31.716 INFO com.nopcommerce.users.Level_17_Extent_V2] - Deleted success
+[11-09-2023 22:45:48.671 INFO com.nopcommerce.users.Level_17_Extent_V2] - Register - Step 01: Verify Register link is displayed
+[11-09-2023 22:45:48.796 INFO com.nopcommerce.users.Level_17_Extent_V2] - -----------------FAILED-----------------
+[11-09-2023 22:45:48.797 INFO com.nopcommerce.users.Level_17_Extent_V2] - Register - Step 02: Click to Register link
+[11-09-2023 22:45:51.966 INFO com.nopcommerce.users.Level_17_Extent_V2] - Register - Step 03: Click to Register button
+[11-09-2023 22:45:52.267 INFO com.nopcommerce.users.Level_17_Extent_V2] - Register - Step 04: Verify error message at FirstName textbox
+[11-09-2023 22:45:52.315 INFO com.nopcommerce.users.Level_17_Extent_V2] - -----------------PASSED-----------------
+[11-09-2023 22:45:52.316 INFO com.nopcommerce.users.Level_17_Extent_V2] - Register - Step 05: Verify error message at LastName textbox
+[11-09-2023 22:45:52.361 INFO com.nopcommerce.users.Level_17_Extent_V2] - -----------------PASSED-----------------
+[11-09-2023 22:45:52.374 INFO com.nopcommerce.users.Level_17_Extent_V2] - Register - Step 01: Enter to First Name textbox with value is John
+[11-09-2023 22:45:54.967 INFO com.nopcommerce.users.Level_17_Extent_V2] - Register - Step 02: Enter to Last Name textbox with value is Wick
+[11-09-2023 22:45:55.090 INFO com.nopcommerce.users.Level_17_Extent_V2] - Register - Step 03: Enter to Email address textbox with value is john2828@gmail.com
+[11-09-2023 22:45:55.158 INFO com.nopcommerce.users.Level_17_Extent_V2] - Register - Step 04: Enter to Password textbox with value is 123456
+[11-09-2023 22:45:55.224 INFO com.nopcommerce.users.Level_17_Extent_V2] - Register - Step 05: Enter to ConfirmPassword textbox with value is 123456
+[11-09-2023 22:45:55.287 INFO com.nopcommerce.users.Level_17_Extent_V2] - Register - Step 06: Click to Register button
+[11-09-2023 22:46:00.557 INFO com.nopcommerce.users.Level_17_Extent_V2] - Register - Step 07: Verify success message is displayed
+[11-09-2023 22:46:03.993 INFO com.nopcommerce.users.Level_17_Extent_V2] - -----------------FAILED-----------------

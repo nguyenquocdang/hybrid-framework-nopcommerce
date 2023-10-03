@@ -1,0 +1,16 @@
+[2023-08-30 23:51:20,814] [INFO] [com.nopcommerce.users.Level_15_Log] - Register - Step 01: Verify Register link is displayed
+[2023-08-30 23:51:20,999] [INFO] [com.nopcommerce.users.Level_15_Log] - -----------------FAILED-----------------
+[2023-08-30 23:51:21,004] [INFO] [com.nopcommerce.users.Level_15_Log] - Register - Step 02: Click to Register link
+[2023-08-30 23:51:22,231] [INFO] [com.nopcommerce.users.Level_15_Log] - Register - Step 03: Click to Register button
+[2023-08-30 23:51:22,590] [INFO] [com.nopcommerce.users.Level_15_Log] - Register - Step 04: Verify error message at FirstName textbox
+[2023-08-30 23:51:22,646] [INFO] [com.nopcommerce.users.Level_15_Log] - -----------------PASSED-----------------
+[2023-08-30 23:51:22,646] [INFO] [com.nopcommerce.users.Level_15_Log] - Register - Step 05: Verify error message at LastName textbox
+[2023-08-30 23:51:22,694] [INFO] [com.nopcommerce.users.Level_15_Log] - -----------------FAILED-----------------
+[2023-08-30 23:51:22,694] [INFO] [com.nopcommerce.users.Level_15_Log] - Register - Step 06: Enter to First Name textbox with value is John
+[2023-08-30 23:51:22,789] [INFO] [com.nopcommerce.users.Level_15_Log] - Register - Step 07: Enter to Last Name textbox with value is Wick
+[2023-08-30 23:51:22,881] [INFO] [com.nopcommerce.users.Level_15_Log] - Register - Step 08: Enter to Email address textbox with value is john2536@gmail.com
+[2023-08-30 23:51:22,995] [INFO] [com.nopcommerce.users.Level_15_Log] - Register - Step 09: Enter to Password textbox with value is 123456
+[2023-08-30 23:51:23,073] [INFO] [com.nopcommerce.users.Level_15_Log] - Register - Step 10: Enter to ConfirmPassword textbox with value is 123456
+[2023-08-30 23:51:23,155] [INFO] [com.nopcommerce.users.Level_15_Log] - Register - Step 11: Click to Register button
+[2023-08-30 23:51:23,928] [INFO] [com.nopcommerce.users.Level_15_Log] - Register - Step 12: Verify success message is displayed
+[2023-08-30 23:51:24,004] [INFO] [com.nopcommerce.users.Level_15_Log] - -----------------FAILED-----------------

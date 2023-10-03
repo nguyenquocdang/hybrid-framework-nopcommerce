@@ -1,0 +1,8 @@
+[08-09-2023 00:20:11.040 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 01: Verify Register link is displayed
+[08-09-2023 00:20:11.198 INFO com.nopcommerce.users.Level_16_ReportNG] - -----------------FAILED-----------------
+[08-09-2023 00:20:11.199 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 02: Click to Register link
+[08-09-2023 00:20:12.694 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 03: Click to Register button
+[08-09-2023 00:20:13.042 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 04: Verify error message at FirstName textbox
+[08-09-2023 00:20:13.103 INFO com.nopcommerce.users.Level_16_ReportNG] - -----------------PASSED-----------------
+[08-09-2023 00:20:13.103 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 05: Verify error message at LastName textbox
+[08-09-2023 00:20:13.152 INFO com.nopcommerce.users.Level_16_ReportNG] - -----------------PASSED-----------------

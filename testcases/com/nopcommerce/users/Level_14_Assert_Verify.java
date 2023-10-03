@@ -26,26 +26,33 @@ public class Level_14_Assert_Verify extends BaseTest{
 	// Không thuộc SideBar sẽ không gọi được
 	private HomePageObject homePage;
 	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
-	
-	// Thuộc SideBar sẽ gọi các hàm trong SideBar dùng được
-	private CustomerPageObject customerPage;
+
 	private DownloadableProductPageObject downloadableProductPage;
 	private RewardPointPageObject rewardPointPage;
 	private AddressesPageObject addressesPage;
 	
-	private String userUrl = GlobalConstants.DEV_USER_URL;
 	
 	@Parameters({"browser"})
 	@BeforeClass
 	public void beforeClass(String browserName) {
-		driver = getBrowserDriver(browserName, userUrl);
+		driver = getBrowserDriver(browserName);
 		homePage = PageGeneratorManager.getHomePage(driver);
 	}
 
 	@Test
 	public void User_01_Register() {
+		// Verify Register link undisplayed -> FAILED
+		verifyFalse(homePage.isRegisterLinkDisplayed());
+
 		registerPage = homePage.clickToRegisterLink();
+		
+		registerPage.clickToRegisterButton();
+		
+		// Verify error message at FirstName textbox -> PASSED
+		verifyEquals(registerPage.getFirstNameErrorMessage(), "First name is required.");
+		
+		// Verify error message at LastName textbox -> FAILED
+		verifyEquals(registerPage.getLastNameErrorMessage(), "Last name is required");
 
 		registerPage.enterToFirstNameTextBox("John");
 		registerPage.enterToLastNameTextBox("Wick");
@@ -55,71 +62,11 @@ public class Level_14_Assert_Verify extends BaseTest{
 
 		registerPage.clickToRegisterButton();
 
-		Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
-
-		homePage = registerPage.clickToHomePageLogo();
-
-		loginPage = homePage.clickToLoginLink();
-		
-		homePage = loginPage.loginAsUser(emailAddress, "123456");
-		
-		customerPage = homePage.clickToMyAccountLink();
-		
-		Assert.assertEquals(customerPage.getFirstNameAttributeValue(), "John");
-		Assert.assertEquals(customerPage.getLastNameAttributeValue(), "Wick");
-		Assert.assertEquals(customerPage.getEmailAttributeValue(), emailAddress);
+		// Verify success message -> FAILED
+		verifyEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed.");
 	}
 	
-	@Test
-	public void User_02_Switch_Page() {
-		// Customer Info => Downloadable products
-		downloadableProductPage = (DownloadableProductPageObject) customerPage.openDynamicSideBarPage("Downloadable products");
-		// ...
-		
-		// Downloadable products => Addresses
-		addressesPage = (AddressesPageObject) downloadableProductPage.openDynamicSideBarPage("Addresses");
-		// ...
-		
-		// Addresses =>Reward points
-		rewardPointPage = (RewardPointPageObject) addressesPage.openDynamicSideBarPage("Reward points");
-		// ...
-		
-		//Reward points => Customer Info
-		customerPage = (CustomerPageObject) rewardPointPage.openDynamicSideBarPage("Customer info");
-		// ...
-		
-		// Customer Info => Addresses
-		addressesPage = (AddressesPageObject) customerPage.openDynamicSideBarPage("Addresses");
-		// ...
-		
-		// Addresses => Downloadable products
-		downloadableProductPage = (DownloadableProductPageObject) addressesPage.openDynamicSideBarPage("Downloadable products");
-		// ...
-		
-		customerPage = (CustomerPageObject) downloadableProductPage.openDynamicSideBarPage("Customer info");
-		
-		addressesPage =  (AddressesPageObject) customerPage.openDynamicSideBarPage("Addresses");
-	}
-	
-	@Test
-	public void User_03_Switch_Page() {
-		// Addresses =>Reward points
-		addressesPage.openDynamicSideBarPageByName("Reward points");
-		rewardPointPage = PageGeneratorManager.getRewardPointPage(driver);
-		
-		//Reward points => Customer Info
-		rewardPointPage.openDynamicSideBarPageByName("Customer info");
-		customerPage = PageGeneratorManager.getCustomerPage(driver);
-		
-		// Customer Info => Addresses
-		customerPage.openDynamicSideBarPageByName("Addresses");
-		addressesPage = PageGeneratorManager.getAddressesPage(driver);
-		
-		
-		// Addresses => Downloadable products
-		addressesPage.openDynamicSideBarPageByName("Downloadable products");
-		downloadableProductPage = PageGeneratorManager.getDownloadableProductPage(driver);
-	}
+
 
 	@AfterClass
 	public void afterClass() {

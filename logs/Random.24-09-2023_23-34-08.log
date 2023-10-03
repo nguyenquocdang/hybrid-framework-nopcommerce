@@ -1,0 +1,16 @@
+[24-09-2023 23:34:17.039 INFO com.facebook.home.Level_20_Element_Undisplayed] - -----------------PASSED-----------------
+[24-09-2023 23:34:17.084 INFO com.facebook.home.Level_20_Element_Undisplayed] - -----------------PASSED-----------------
+[24-09-2023 23:34:17.130 INFO com.facebook.home.Level_20_Element_Undisplayed] - -----------------PASSED-----------------
+[24-09-2023 23:34:17.192 INFO com.facebook.home.Level_20_Element_Undisplayed] - -----------------PASSED-----------------
+[24-09-2023 23:34:17.510 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify Confirm Email textbox is displayed
+[24-09-2023 23:34:17.591 INFO com.facebook.home.Level_20_Element_Undisplayed] - -----------------PASSED-----------------
+[24-09-2023 23:34:20.937 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify Confirm Email textbox is not displayed
+[24-09-2023 23:34:20.978 INFO com.facebook.home.Level_20_Element_Undisplayed] - -----------------PASSED-----------------
+[24-09-2023 23:34:24.161 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify Firstname textbox is not displayed
+[24-09-2023 23:34:29.253 INFO com.facebook.home.Level_20_Element_Undisplayed] - -----------------PASSED-----------------
+[24-09-2023 23:34:29.254 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify Surname textbox is not displayed
+[24-09-2023 23:34:34.317 INFO com.facebook.home.Level_20_Element_Undisplayed] - -----------------PASSED-----------------
+[24-09-2023 23:34:34.318 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify Emailname textbox is not displayed
+[24-09-2023 23:34:39.357 INFO com.facebook.home.Level_20_Element_Undisplayed] - -----------------PASSED-----------------
+[24-09-2023 23:34:39.358 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify Password textbox is not displayed
+[24-09-2023 23:34:44.414 INFO com.facebook.home.Level_20_Element_Undisplayed] - -----------------PASSED-----------------

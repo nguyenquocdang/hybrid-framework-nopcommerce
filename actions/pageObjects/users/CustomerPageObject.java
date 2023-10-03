@@ -1,10 +1,7 @@
 package pageObjects.users;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 
-import commons.BasePage;
 import pageUIs.users.CustomerPageUI;
 
 public class CustomerPageObject extends SideBarMyAccountPageObject{
@@ -14,12 +11,6 @@ public class CustomerPageObject extends SideBarMyAccountPageObject{
 	public CustomerPageObject(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
-	}
-	
-	public CustomerPageObject(WebDriver driver, long timeout) {
-		super(driver);
-		this.driver = driver;
-		this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeout));
 	}
 
 	public String getFirstNameAttributeValue() {

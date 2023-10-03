@@ -2,17 +2,19 @@ package pageObjects.users;
 
 import org.openqa.selenium.WebDriver;
 
-import commons.BasePage;
-import commons.PageGeneratorManager;
+import commons.BaseElement;
+import io.qameta.allure.Step;
 import pageUIs.users.RegisterPageUI;
 
-public class RegisterPageObject extends BasePage{
+public class RegisterPageObject extends BaseElement{
 	private WebDriver driver;
 	
 	public RegisterPageObject(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 	}
 
+	@Step("Click to Register button")
 	public void clickToRegisterButton() {
 		waitForElementClickable(driver, RegisterPageUI.REGISTER_BUTTON);
 		clickToElement(driver, RegisterPageUI.REGISTER_BUTTON);
@@ -43,37 +45,37 @@ public class RegisterPageObject extends BasePage{
 		return getElementText(driver, RegisterPageUI.CONFIRM_PASSWORD_ERROR_MESSAGE);
 	}
 
-	public HomePageObject clickToHomePageLogo() {
-		waitForElementClickable(driver, RegisterPageUI.HOME_LOGO_IMAGE);
-		clickToElement(driver, RegisterPageUI.HOME_LOGO_IMAGE);
-		return PageGeneratorManager.getHomePage(driver);
-	}
-
+	@Step("Enter to First Name textbox with value is {0}")
 	public void enterToFirstNameTextBox(String firstName) {
 		waitForElementVisible(driver, RegisterPageUI.FIRST_NAME_TEXTBOX);
 		sendkeyToElement(driver, RegisterPageUI.FIRST_NAME_TEXTBOX, firstName);
 	}
 
+	@Step("Enter to Last Name textbox with value is {0}")
 	public void enterToLastNameTextBox(String lastName) {
 		waitForElementVisible(driver, RegisterPageUI.LAST_NAME_TEXTBOX);
 		sendkeyToElement(driver, RegisterPageUI.LAST_NAME_TEXTBOX, lastName);
 	}
 
+	@Step("Enter to Email textbox with value is {0}")
 	public void enterToEmailTextBox(String emailAddress) {
 		waitForElementVisible(driver, RegisterPageUI.EMAIL_TEXTBOX);
 		sendkeyToElement(driver, RegisterPageUI.EMAIL_TEXTBOX, emailAddress);
 	}
 
+	@Step("Enter to Password textbox with value is {0}")
 	public void enterToPasswordTextBox(String password) {
 		waitForElementVisible(driver, RegisterPageUI.PASSWORD_TEXTBOX);
 		sendkeyToElement(driver, RegisterPageUI.PASSWORD_TEXTBOX, password);
 	}
 
+	@Step("Enter to Confirm Password textbox with value is {0}")
 	public void enterToConfirmPasswordTextBox(String confirmPassword) {
 		waitForElementVisible(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXTBOX);
 		sendkeyToElement(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXTBOX, confirmPassword);
 	}
-
+	
+	@Step("Verify the register success message is displayed")
 	public String getRegisterSuccessMessage() {
 		waitForElementVisible(driver, RegisterPageUI.REGISTER_SUCCESS_MESSAGE);
 		return getElementText(driver, RegisterPageUI.REGISTER_SUCCESS_MESSAGE);

@@ -23,6 +23,7 @@ import pageObjects.users.CustomerPageObject;
 import pageObjects.users.DownloadableProductPageObject;
 import pageObjects.users.HomePageObject;
 import pageObjects.users.RewardPointPageObject;
+import pageUIs.users.BaseElementUI;
 import pageUIs.users.BasePageUI;
 import pageUIs.users.SideBarMyAccountPageUI;
 
@@ -286,12 +287,37 @@ public class BasePage {
 		}
 	}
 	
+	// Case 01: Element hiển thị trên UI và có trong HTML
+	// Case 02: Element ko hiển thị trên UI và có trong HTML
 	public boolean isElementDisplayed(WebDriver driver, String xpathExpression) {
 		return getElement(driver, xpathExpression).isDisplayed();
 	}
 	
 	public boolean isElementDisplayed(WebDriver driver, String xpathExpression, String...restParams) {
 		return getElement(driver, getDynamicLocator(xpathExpression, restParams)).isDisplayed();
+	}
+	
+	public void setImplicitWait(WebDriver driver, long timeout) {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeout));
+	}
+	
+	// Case 03: Element ko hiển thị trên UI và ko có trong HTML
+	public boolean isElementUndisplayed(WebDriver driver, String xpathExpression) {
+		// Trước khi tìm element thì set time ngắn thôi
+		setImplicitWait(driver, shortTimeout);
+		List<WebElement> elements = getListElement(driver, xpathExpression);
+		// Tìm xong trả lại timeout mặc định cho các step còn lại
+		setImplicitWait(driver, longTimeout);
+		if (elements.size() > 0 && elements.get(0).isDisplayed()) {
+			// Element có trên UI và có trong HTML -> false
+			return false;
+		} else if (elements.size() > 0 && !elements.get(0).isDisplayed()) { 
+			// Element ko có trên UI và có trong HTML
+			return true; 
+		} else { 
+			// Element ko có trên UI và ko có trong HTML
+			return true; 
+		}
 	}
 	
 	public boolean isElementSelected(WebDriver driver, String xpathExpression) {
@@ -471,10 +497,11 @@ public class BasePage {
 			fullFileName = fullFileName + filePath + file + "\n";
 		}
 		fullFileName = fullFileName.trim();
-		getElement(driver, BasePageUI.UPLOAD_FILE_TYPE).sendKeys(fullFileName);
+		getElement(driver, BaseElementUI.UPLOAD_FILE_TYPE).sendKeys(fullFileName);
 	}
 	
 	
 	
+	private long shortTimeout = GlobalConstants.SHORT_TIMEOUT;
 	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
 }
