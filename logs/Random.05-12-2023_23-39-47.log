@@ -1,0 +1,6 @@
+[05-12-2023 23:40:21.207 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[05-12-2023 23:40:21.215 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = chromedriver: chrome on windows (d4ab4268ed7cc109e0bf9f7b76407b33)
+[05-12-2023 23:40:44.229 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[05-12-2023 23:40:44.230 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = firefoxdriver: firefox on windows (96dadd32-553d-4bb4-a8a5-47cb3d319a44)
+[05-12-2023 23:41:03.342 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[05-12-2023 23:41:03.344 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = edgedriver: msedge on windows (ac1d52840be8393d018ed31f8af2c918)

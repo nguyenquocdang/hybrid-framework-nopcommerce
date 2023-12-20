@@ -8,10 +8,10 @@
 
 	</listeners>
 
-	<test name="Run on Firefox">
+	<test name="Run on Firefox" preserve-order="true">
 		<parameter name="browser" value="firefox" />
 		<classes>
-			<class name="com.nopcommerce.users.Level_21_Partern_Object" />
+			<class name="com.nopcommerce.users.Level_22_Close_Browser" />
 		</classes>
 	</test>
 

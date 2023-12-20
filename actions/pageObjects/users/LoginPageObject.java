@@ -36,5 +36,5 @@ public class LoginPageObject extends BaseElement {
 		waitForElementClickable(driver, LoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
 	}
-
+	
 }

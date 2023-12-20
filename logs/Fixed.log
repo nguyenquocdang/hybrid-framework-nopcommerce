@@ -560,3 +560,39 @@
 [02-10-2023 18:51:42.691 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify Firstname textbox is not displayed
 [02-10-2023 18:51:47.805 INFO com.facebook.home.Level_20_Element_Undisplayed] - -----------------PASSED-----------------
 [02-10-2023 18:51:47.806 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify Surname textbox is not displayed
+[09-10-2023 01:04:58.823 INFO com.nopcommerce.users.Level_22_Close_Browser] - OS name = Windows 10
+[09-10-2023 01:04:58.828 INFO com.nopcommerce.users.Level_22_Close_Browser] - Driver instance name = firefoxdriver: firefox on windows (b78a5c81-d5ef-4b9d-9bbf-6ccfbf17ecd3)
+[09-10-2023 01:07:34.523 INFO com.nopcommerce.users.Level_22_Close_Browser] - OS name = windows 10
+[09-10-2023 01:07:34.530 INFO com.nopcommerce.users.Level_22_Close_Browser] - Driver instance name = firefoxdriver: firefox on windows (86381022-4cf4-4ce8-b8e1-c6c73808245c)
+[05-12-2023 23:40:21.207 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[05-12-2023 23:40:21.215 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = chromedriver: chrome on windows (d4ab4268ed7cc109e0bf9f7b76407b33)
+[05-12-2023 23:40:44.229 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[05-12-2023 23:40:44.230 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = firefoxdriver: firefox on windows (96dadd32-553d-4bb4-a8a5-47cb3d319a44)
+[05-12-2023 23:41:03.342 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[05-12-2023 23:41:03.344 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = edgedriver: msedge on windows (ac1d52840be8393d018ed31f8af2c918)
+[17-12-2023 02:49:12.310 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[17-12-2023 02:49:12.320 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = chromedriver: chrome on windows (2734718cf35afb5471461f31147bbb05)
+[17-12-2023 20:37:35.879 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[17-12-2023 20:37:35.890 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = chromedriver: chrome on windows (3a3b807d427d117e857f757d4f16fdd9)
+[17-12-2023 22:54:53.786 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[17-12-2023 22:54:53.795 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = chromedriver: chrome on windows (81ce0a831d09454a1e9300361905f0bd)
+[17-12-2023 22:58:47.985 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[17-12-2023 22:58:48.035 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = chromedriver: chrome on windows (ce0918c48b0e82efb39bc41fae08c11a)
+[17-12-2023 23:03:54.883 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[17-12-2023 23:03:54.891 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = chromedriver: chrome on windows (0875415dd467b6b9d87f14b4488936a3)
+[18-12-2023 13:42:20.139 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[18-12-2023 13:42:20.147 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = chromedriver: chrome on windows (81d952730ea9a6fbe20f3891ff974045)
+[18-12-2023 14:03:44.717 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[18-12-2023 14:03:44.722 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = chromedriver: chrome on windows (2eee999cf2e883fbaaaf04699763195b)
+[18-12-2023 14:04:34.915 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[18-12-2023 14:04:34.922 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = chromedriver: chrome on windows (58410a733cc8c955e8790b17be9042e0)
+[20-12-2023 14:54:12.639 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[20-12-2023 14:54:12.647 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = chromedriver: chrome on windows (a6b286b1160d9f6063d1f354460bdf5d)
+[20-12-2023 14:58:26.444 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[20-12-2023 14:58:26.450 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = chromedriver: chrome on windows (3967fbac329c1b40b6a370eae134ac9d)
+[20-12-2023 15:02:46.356 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[20-12-2023 15:02:46.363 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = chromedriver: chrome on windows (148d2e08196c6b175c41a930357e5518)
+[20-12-2023 15:04:19.173 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[20-12-2023 15:04:19.181 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = chromedriver: chrome on windows (03c8cf609ab1cf85243e443aa7ac5396)
+[20-12-2023 15:08:25.486 INFO com.orangehrm.pim.PIM_01_Employee] - OS name = windows 10
+[20-12-2023 15:08:25.495 INFO com.orangehrm.pim.PIM_01_Employee] - Driver instance name = chromedriver: chrome on windows (9d2590018b2220812acf864bb96e88b0)

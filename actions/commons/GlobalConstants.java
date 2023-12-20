@@ -17,6 +17,10 @@ public class GlobalConstants {
 	public static final long LONG_TIMEOUT = 30;
 	public static final String DEV_ADMIN_USERNAME = "admin@yourstore.com";
 	public static final String DEV_ADMIN_PASSWORD = "admin";
+	public static final String ADMIN_ORANGE_HRM_USERNAME = "Admin";
+	public static final String ADMIN_ORANGE_HRM_PASSWORD = "admin123";
+	// public static final String ADMIN_ORANGE_HRM_USERNAME = "automationfc";
+	// public static final String ADMIN_ORANGE_HRM_PASSWORD = "%%1SG@aj21";
 	public static final String OS_NAME = System.getProperty("os.name");
 	public static final String RELATIVE_PROJECT_PATH = System.getProperty("user.dir");
 	public static final String JAVA_VERSION = System.getProperty("java.version");

@@ -1,11 +1,13 @@
 package commons;
 
 import java.time.Duration;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -269,18 +271,21 @@ public class BasePage {
 		return getListElement(driver, getDynamicLocator(xpathExpression, restParams)).size();
 	}
 	
+	// Default Checkbox/ Radio
 	public void checkToCheckboxRadio(WebDriver driver, String xpathExpression) {
 		if (!isElementSelected(driver, xpathExpression)) {
 			clickToElement(driver, xpathExpression);
 		}
 	}
 	
+	// Default Checkbox/ Radio
 	public void checkToCheckboxRadio(WebDriver driver, String xpathExpression,  String...restParams) {
 		if (!isElementSelected(driver, getDynamicLocator(xpathExpression, restParams))) {
 			clickToElement(driver, getDynamicLocator(xpathExpression, restParams));
 		}
 	}
 	
+	// Default Checkbox
 	public void uncheckToCheckbox(WebDriver driver, String xpathExpression) {
 		if (isElementSelected(driver, xpathExpression)) {
 			getElement(driver, xpathExpression).click();
@@ -322,6 +327,10 @@ public class BasePage {
 	
 	public boolean isElementSelected(WebDriver driver, String xpathExpression) {
 		return getElement(driver, xpathExpression).isSelected();
+	}
+	
+	public boolean isElementSelected(WebDriver driver, String xpathExpression, String...restParams) {
+		return getElement(driver, getDynamicLocator(xpathExpression, restParams)).isSelected();
 	}
 	
 	public boolean isElementEnabled(WebDriver driver, String xpathExpression) {
@@ -388,6 +397,11 @@ public class BasePage {
 
 	public void clickToElementByJS(WebDriver driver, String xpathExpression) {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", getElement(driver, xpathExpression));
+		sleepInSecond(3);
+	}
+	
+	public void clickToElementByJS(WebDriver driver, String xpathExpression, String...restParams) {
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", getElement(driver, getDynamicLocator(xpathExpression, restParams)));
 		sleepInSecond(3);
 	}
 
@@ -500,7 +514,15 @@ public class BasePage {
 		getElement(driver, BaseElementUI.UPLOAD_FILE_TYPE).sendKeys(fullFileName);
 	}
 	
+	public Set<Cookie> getBrowserCookies(WebDriver driver){
+		return driver.manage().getCookies();
+	}
 	
+	public void setCookies(WebDriver driver, Set<Cookie> cookies) {
+		for (Cookie cookie : cookies) {
+			driver.manage().addCookie(cookie);
+		}
+	}
 	
 	private long shortTimeout = GlobalConstants.SHORT_TIMEOUT;
 	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
