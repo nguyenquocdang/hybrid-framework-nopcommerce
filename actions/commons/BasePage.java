@@ -228,7 +228,6 @@ public class BasePage {
 			
 			if (tempElement.getText().equals(expectedText)) {
 				
-				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", tempElement);
 				sleepInSecond(1);
 				
 				tempElement.click();

@@ -8,12 +8,14 @@
 
 	</listeners>
 
-	<test name="Run on Firefox" preserve-order="true">
-		<parameter name="browser" value="firefox" />
+	<test name="Run on Chrome UI" preserve-order="true">
+		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.nopcommerce.users.Level_22_Close_Browser" />
+			<class name="com.nopcommerce.users.Level_18_Extent_V5" />
 		</classes>
 	</test>
+	
+
 
 
 
