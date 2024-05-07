@@ -22,7 +22,7 @@ import pageFactory.RegisterPageObject;
 
 public class Level_05_Page_Factory extends BaseTest{
 	private WebDriver driver;
-	private String emailAddress = getEmailAddress();
+	private String emailAddress = getEmailAddressRandom();
 	private HomePageObject homePage;
 	private RegisterPageObject registerPage;
 	private LoginPageObject loginPage;

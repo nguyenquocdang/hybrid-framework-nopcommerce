@@ -16,7 +16,7 @@ import pageObjects.users.RegisterPageObject;
 
 public class Level_07_Switch_Multiple_Page extends BaseTest{
 	private WebDriver driver;
-	private String emailAddress = getEmailAddress();
+	private String emailAddress = getEmailAddressRandom();
 	
 	// Không thuộc SideBar sẽ không gọi được
 	private HomePageObject homePage;

@@ -3,6 +3,7 @@ package pageObjects.orangehrm;
 import org.openqa.selenium.WebDriver;
 
 import pageUIs.orangehrm.PersonalDetailsPageUI;
+import pojoData.orangeHRM.EmployeeInfo;
 
 public class PersonalDetailsPageObject extends BaseActions {
 	WebDriver driver;
@@ -89,6 +90,19 @@ public class PersonalDetailsPageObject extends BaseActions {
 
 	public String getMaritalStatusDropdownSelectedText() {
 		return getElementText(driver, PersonalDetailsPageUI.MARITAL_STATUS_DROPDOWN_SELECTED_TEXT);
+	}
+
+	public void setPersonalDetail(EmployeeInfo employeeInfo) {
+		//enterToNicknameTextbox(employeeInfo.getNickName());
+		enterToDriverLicenseNumberTextbox(employeeInfo.getDriverLicenseNumber());
+		enterToLicenseExpiryDatePicker(employeeInfo.getLicenseExpiryDate());
+		enterToSocialSecurityNumberTextbox(employeeInfo.getSsnNumber());
+		enterToSocialInsuranceNumberTextbox(employeeInfo.getSinNumber());
+		selectToNationalityDropdown(employeeInfo.getNationality());
+		selectToMaritalStatusDropdown(employeeInfo.getMaritalStatus());
+		enterToDateOfBirtgDatePicker(employeeInfo.getDateOfBirth());
+		clickToRadioButtonByLabel(employeeInfo.getGenderStatus());
+		clickToCheckboxByLabelName(employeeInfo.getSmokerStatus());
 	}
 
 

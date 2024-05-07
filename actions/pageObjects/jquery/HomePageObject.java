@@ -75,7 +75,7 @@ public class HomePageObject extends BasePage{
 		int columnIndex = getListElementsSize(driver, HomePageUI.DYNAMIC_COLUMN_INDEX_BY_COLUMN_NAME, columnName) + 1;
 		
 		waitForElementClickable(driver, HomePageUI.DYNAMIC_DROPDOWN_BY_ROW_INDEX_AND_COLUMN_INDEX, rowIndex, String.valueOf(columnIndex));
-		selectDropdown(driver, HomePageUI.DYNAMIC_DROPDOWN_BY_ROW_INDEX_AND_COLUMN_INDEX, dropdownItem, dropdownItem, rowIndex, String.valueOf(columnIndex));
+		selectItemInDefaultDropdown(driver, HomePageUI.DYNAMIC_DROPDOWN_BY_ROW_INDEX_AND_COLUMN_INDEX, dropdownItem, dropdownItem, rowIndex, String.valueOf(columnIndex));
 	}
 
 	public void clickToCheckboxByColumnNameAndRowIndex(String columnName, String rowIndex) {

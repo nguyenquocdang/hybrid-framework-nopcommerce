@@ -17,14 +17,14 @@ import pageObjects.orangehrm.EmployeeListPageObject;
 import pageObjects.orangehrm.LoginPageObject;
 import pageObjects.orangehrm.PageGeneratorManager;
 import pageObjects.orangehrm.PersonalDetailsPageObject;
+import pojoData.orangeHRM.EmployeeInfo;
 import reportConfig.ExtentTestManager;
 
 public class PIM_01_Employee extends BaseTest{
 	private WebDriver driver;
-	private String browserName, employeeID, firstName, lastName, nickName;
-	private String driverLicenseNumber, licenseExpiryDate, ssnNumber, sinNumber;
-	private String dateOfBirth, genderStatus, smokerStatus, nationality, maritalStatus;
+	private String browserName;
 	private LoginPageObject loginPage;
+	private EmployeeInfo employeeInfo;
 	private DashboardPageObject dashboardPage;
 	private EmployeeListPageObject employeeListPage;
 	private AddEmployeePageObject addEmployeePage;
@@ -36,21 +36,21 @@ public class PIM_01_Employee extends BaseTest{
 	public void beforeClass(String url, String browserName) {
 		driver = getBrowserDriver(browserName, url);
 		this.browserName = browserName;
-		firstName = "Michael";
-		lastName = "Owen";
-		nickName = "golden_boy";
-		driverLicenseNumber = "D08954796";
-		licenseExpiryDate = "2024-01-03";
-		ssnNumber = "428-53-1251";
-		sinNumber = "968563231";
-		dateOfBirth = "1986-10-10";
-		genderStatus = "Male";
-		smokerStatus = "Yes";
-		nationality = "American";
-		maritalStatus = "Married";
-		
-		
 		loginPage = PageGeneratorManager.getLoginPage(driver);
+		employeeInfo = EmployeeInfo.getEmployee();
+		
+		employeeInfo.setFirstName("Michael");
+		employeeInfo.setLastName("Owen");
+		employeeInfo.setNickName("golden_boy");
+		employeeInfo.setDriverLicenseNumber("D08954796");
+		employeeInfo.setLicenseExpiryDate("2024-01-03");
+		employeeInfo.setSsnNumber("428-53-1251");
+		employeeInfo.setSinNumber("968563231");
+		employeeInfo.setNationality("American");
+		employeeInfo.setMaritalStatus("Married");
+		employeeInfo.setDateOfBirth("1986-10-10");
+		employeeInfo.setGenderStatus("Male");
+		employeeInfo.setSmokerStatus("Yes");
 		
 		loginPage.enterToUsernameTextbox(GlobalConstants.ADMIN_ORANGE_HRM_USERNAME);
 		loginPage.enterToPasswordTextbox(GlobalConstants.ADMIN_ORANGE_HRM_PASSWORD);
@@ -65,9 +65,10 @@ public class PIM_01_Employee extends BaseTest{
 
 		addEmployeePage = employeeListPage.clickToAddEmployeeButton();
 		
-		addEmployeePage.enterToFirstNameTextbox(firstName);
-		addEmployeePage.enterToLastNameTextbox(lastName);
-		employeeID = addEmployeePage.getEmployeeID();
+		addEmployeePage.enterToFirstNameTextbox(employeeInfo.getFirstName());
+		addEmployeePage.enterToLastNameTextbox(employeeInfo.getLastName());
+		
+		employeeInfo.setEmployeeID(addEmployeePage.getEmployeeID());
 		
 		addEmployeePage.clickSaveButton();
 		
@@ -79,62 +80,44 @@ public class PIM_01_Employee extends BaseTest{
 		Assert.assertTrue(personalDetailsPage.isPersonalDetailsHeaderDisplayed());
 		personalDetailsPage.waitForSpinnerIconInvisible();
 		
-		Assert.assertEquals(personalDetailsPage.getFirstNameValue(), firstName);
-		Assert.assertEquals(personalDetailsPage.getLastNameValue(), lastName);
-		Assert.assertEquals(personalDetailsPage.getEmployeeIDValue(), employeeID);
+		Assert.assertEquals(personalDetailsPage.getFirstNameValue(), employeeInfo.getFirstName());
+		Assert.assertEquals(personalDetailsPage.getLastNameValue(), employeeInfo.getLastName());
+		Assert.assertEquals(personalDetailsPage.getEmployeeIDValue(), employeeInfo.getEmployeeID());
 		
 		employeeListPage = personalDetailsPage.clickToEmployeeListButton();
 		
-		employeeListPage.enterToEmployeeIDTextbox(employeeID);
+		employeeListPage.enterToEmployeeIDTextbox(employeeInfo.getEmployeeID());
 		employeeListPage.clickToSearchButton();
 		
-		Assert.assertTrue(employeeListPage.isValueDisplayedAtColumnName("Id", "1", employeeID));
-		Assert.assertTrue(employeeListPage.isValueDisplayedAtColumnName("First (& Middle) Name", "1", firstName));
-		Assert.assertTrue(employeeListPage.isValueDisplayedAtColumnName("Last Name", "1", lastName));
+		Assert.assertTrue(employeeListPage.isValueDisplayedAtColumnName("Id", "1", employeeInfo.getEmployeeID()));
+		Assert.assertTrue(employeeListPage.isValueDisplayedAtColumnName("First (& Middle) Name", "1", employeeInfo.getFirstName()));
+		Assert.assertTrue(employeeListPage.isValueDisplayedAtColumnName("Last Name", "1", employeeInfo.getLastName()));
 	}
 	
 	@Test
 	public void Employee_02_Personal_Details(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Employee_02_Personal_Details");
 
-		personalDetailsPage = employeeListPage.clickToEditIconByEmployeeID(employeeID);
+		personalDetailsPage = employeeListPage.clickToEditIconByEmployeeID(employeeInfo.getEmployeeID());
 		
 		Assert.assertTrue(personalDetailsPage.isPersonalDetailsHeaderDisplayed());
 		
-		Assert.assertEquals(personalDetailsPage.getFirstNameValue(), firstName);
-		Assert.assertEquals(personalDetailsPage.getLastNameValue(), lastName);
-		Assert.assertEquals(personalDetailsPage.getEmployeeIDValue(), employeeID);
+		Assert.assertEquals(personalDetailsPage.getFirstNameValue(), employeeInfo.getFirstName());
+		Assert.assertEquals(personalDetailsPage.getLastNameValue(), employeeInfo.getLastName());
+		Assert.assertEquals(personalDetailsPage.getEmployeeIDValue(), employeeInfo.getEmployeeID());
 		
-		personalDetailsPage.enterToNicknameTextbox(nickName);
-		
-		personalDetailsPage.enterToDriverLicenseNumberTextbox(driverLicenseNumber);
-		
-		personalDetailsPage.enterToLicenseExpiryDatePicker(licenseExpiryDate);
-		
-		personalDetailsPage.enterToSocialSecurityNumberTextbox(ssnNumber);
-		
-		personalDetailsPage.enterToSocialInsuranceNumberTextbox(sinNumber);
-		
-		personalDetailsPage.selectToNationalityDropdown(nationality);
-		
-		personalDetailsPage.selectToMaritalStatusDropdown(maritalStatus);
-		
-		personalDetailsPage.enterToDateOfBirtgDatePicker(dateOfBirth);
-		
-		personalDetailsPage.clickToRadioButtonByLabel(genderStatus);
-		
-		personalDetailsPage.clickToCheckboxByLabelName(smokerStatus);
+		personalDetailsPage.setPersonalDetail(employeeInfo);
 		
 		personalDetailsPage.clickToSaveButtonAtPersonalDetailPart();
 		
 		Assert.assertTrue(personalDetailsPage.isSuccessMessageDisplayed("Successfully Updated"));
 		personalDetailsPage.waitForSpinnerIconInvisible();
 		
-		Assert.assertEquals(personalDetailsPage.getNationalityDropdownSelectedText(), nationality);
-		Assert.assertEquals(personalDetailsPage.getMaritalStatusDropdownSelectedText(), maritalStatus);
+		Assert.assertEquals(personalDetailsPage.getNationalityDropdownSelectedText(), employeeInfo.getNationality());
+		Assert.assertEquals(personalDetailsPage.getMaritalStatusDropdownSelectedText(), employeeInfo.getMaritalStatus());
 		
-		Assert.assertTrue(personalDetailsPage.isRadioButtonSelectedByLabelName(genderStatus));
-		Assert.assertTrue(personalDetailsPage.isCheckboxSelectedByLabelName(smokerStatus));
+		Assert.assertTrue(personalDetailsPage.isRadioButtonSelectedByLabelName(employeeInfo.getGenderStatus()));
+		Assert.assertTrue(personalDetailsPage.isCheckboxSelectedByLabelName(employeeInfo.getSmokerStatus()));
 	}
 	
 	@Test
@@ -189,7 +172,7 @@ public class PIM_01_Employee extends BaseTest{
 
 	@AfterClass
 	public void afterClass() {
-		quitBrowserDriver();
+//		quitBrowserDriver();
 	}
 	
 	

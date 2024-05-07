@@ -25,7 +25,7 @@ import pageObjects.users.RewardPointPageObject;
 @Feature("Create Account")
 public class Level_19_Allure_Report extends BaseTest{
 	private WebDriver driver;
-	private String emailAddress = getEmailAddress();
+	private String emailAddress = getEmailAddressRandom();
 	
 	// Không thuộc SideBar sẽ không gọi được
 	private HomePageObject homePage;

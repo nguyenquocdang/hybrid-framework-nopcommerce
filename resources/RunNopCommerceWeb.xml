@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite parallel="none" name="NopCommerce - Web Automation UI">
+<suite parallel="none" name="NopCommerce - Web Automation UI" thread-count="4">
 	
 	<listeners>
 		<listener class-name="commons.MethodListener" />
 		<listener class-name="reportConfig.AllureTestListener" />
 
 	</listeners>
-
+	
+	
+	<parameter name="server" value="test" />
+	
+	
 	<test name="Run on Chrome UI" preserve-order="true">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.nopcommerce.users.Level_18_Extent_V5" />
+			<class name="com.nopcommerce.users.Level_31_Environment_01" />
 		</classes>
 	</test>
 	

@@ -22,7 +22,7 @@ import reportConfig.ExtentTestManager;
 
 public class Level_18_Extent_V5 extends BaseTest{
 	private WebDriver driver;
-	private String emailAddress = getEmailAddress();
+	private String emailAddress = getEmailAddressRandom();
 	
 	// Không thuộc SideBar sẽ không gọi được
 	private HomePageObject homePage;

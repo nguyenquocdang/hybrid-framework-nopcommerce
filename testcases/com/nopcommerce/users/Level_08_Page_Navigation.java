@@ -20,7 +20,7 @@ import pageObjects.users.RewardPointPageObject;
 
 public class Level_08_Page_Navigation extends BaseTest{
 	private WebDriver driver;
-	private String emailAddress = getEmailAddress();
+	private String emailAddress = getEmailAddressRandom();
 	
 	// Không thuộc SideBar sẽ không gọi được
 	private HomePageObject homePage;

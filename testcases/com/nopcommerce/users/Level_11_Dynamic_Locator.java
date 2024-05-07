@@ -21,7 +21,7 @@ import pageObjects.users.RewardPointPageObject;
 
 public class Level_11_Dynamic_Locator extends BaseTest{
 	private WebDriver driver;
-	private String emailAddress = getEmailAddress();
+	private String emailAddress = getEmailAddressRandom();
 	
 	// Không thuộc SideBar sẽ không gọi được
 	private HomePageObject homePage;

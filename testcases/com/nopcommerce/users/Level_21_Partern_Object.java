@@ -24,7 +24,7 @@ import pageObjects.users.RegisterPageObject;
 
 public class Level_21_Partern_Object extends BaseTest{
 	private WebDriver driver;
-	private String emailAddress = getEmailAddress();
+	private String emailAddress = getEmailAddressRandom();
 	private HomePageObject homePage;
 	private RegisterPageObject registerPage;
 	private LoginPageObject loginPage;

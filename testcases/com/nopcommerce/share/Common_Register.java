@@ -26,7 +26,7 @@ public class Common_Register extends BaseTest{
 		firstName = "John";
 		lastName = "Wick";
 		password = "123456";
-		emailAddress = getEmailAddress();
+		emailAddress = getEmailAddressRandom();
 		
 		registerPage = homePage.clickToRegisterLink();
 

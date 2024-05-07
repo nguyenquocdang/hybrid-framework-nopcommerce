@@ -11,6 +11,7 @@ import pageObjects.users.HomePageObject;
 import pageObjects.users.LoginPageObject;
 import pageObjects.users.RegisterPageObject;
 import pageObjects.users.RewardPointPageObject;
+import pageObjects.users.SearchPageObject;
 
 public class PageGeneratorManager {
 	// Tất cả các class trong pageObjects package đều phải có 1 hàm để gọi khởi tạo ra
@@ -50,6 +51,10 @@ public class PageGeneratorManager {
 	
 	public static AdminDashboardPageObject getAdminDashboardPage(WebDriver driver) {
 		return new AdminDashboardPageObject(driver);
+	}
+	
+	public static SearchPageObject getSearchPage(WebDriver driver) {
+		return new SearchPageObject(driver);
 	}
 	
 	

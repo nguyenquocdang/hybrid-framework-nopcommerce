@@ -39,8 +39,8 @@ public class BaseTest {
 			// driver = WebDriverManager.chromedriver().create();
 			ChromeOptions chromeOptions = new ChromeOptions();
 			//chromeOptions.addArguments("--incognito");
-			chromeOptions.addArguments("--user-data-dir=C:/Users/dnguyen287/AppData/Local/Google/Chrome/User Data/");
-			chromeOptions.addArguments("--profile-directory=Profile 2");
+			// chromeOptions.addArguments("--user-data-dir=C:/Users/dnguyen287/AppData/Local/Google/Chrome/User Data/");
+			// chromeOptions.addArguments("--profile-directory=Profile 2");
 			driver = new ChromeDriver(chromeOptions);
 			break;
 		case FIREFOX:
@@ -88,7 +88,7 @@ public class BaseTest {
 		default:
 			throw new RuntimeException("Browser name is not valid.");
 		}
-
+		
 		driver.get(url);
 		driver.manage().window().maximize();
 //		driver.manage().window().setSize(new Dimension(1920, 1080));
@@ -98,9 +98,57 @@ public class BaseTest {
 		return driver;
 	}
 	
-	protected String getEmailAddress() {
+	protected WebDriver getBrowserEnvironment(String browserName, String serverName) {
+		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+		switch (browserList) {
+		case CHROME:
+			// driver = WebDriverManager.chromedriver().create();
+			driver = new ChromeDriver();
+			break;
+		case FIREFOX:
+			// driver = WebDriverManager.firefoxdriver().create();
+			driver = new FirefoxDriver();
+			break;
+		case EDGE:
+			// driver = WebDriverManager.edgedriver().create();
+			driver = new EdgeDriver();
+			break;
+		default:
+			throw new RuntimeException("Browser name is not valid.");
+		}
+
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT));
+		driver.get(getURLByServerName(serverName));
+		return driver;
+	}
+	
+	private String getURLByServerName(String serverName) {
+		ServerList server = ServerList.valueOf(serverName.toUpperCase());
+		switch (server) {
+		case DEV: 
+			serverName = "https://demo.nopcommerce.com/";
+			break;
+		case TEST: 
+			serverName = "https://test.nopcommerce.com/";
+			break;
+		case STAGING: 
+			serverName = "https://staging.nopcommerce.com/";
+			break;
+		default:
+			 new IllegalArgumentException("Unexpected value: " + serverName);
+		}
+		return serverName;
+	}
+	
+	protected String getEmailAddressRandom() {
 		Random rand = new Random();
 		return "john" + rand.nextInt(9999) + "@gmail.com";
+	}
+	
+	protected String getEmailAddressRandom(String prefix) {
+		Random rand = new Random();
+		return prefix + rand.nextInt(9999) + "@gmail.com";
 	}
 	
 	protected void quitBrowserDriver() {

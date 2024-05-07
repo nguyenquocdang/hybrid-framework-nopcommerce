@@ -201,11 +201,11 @@ public class BasePage {
 		getElement(driver, getDynamicLocator(xpathExpression, restParams)).sendKeys(value);
 	}
 	
-	public void selectDropdown(WebDriver driver, String xpathExpression, String itemText) {
+	public void selectItemInDefaultDropdown(WebDriver driver, String xpathExpression, String itemText) {
 		new Select(getElement(driver, xpathExpression)).selectByVisibleText(itemText);
 	}
 	
-	public void selectDropdown(WebDriver driver, String xpathExpression, String itemText, String value, String... restParams) {
+	public void selectItemInDefaultDropdown(WebDriver driver, String xpathExpression, String itemText, String value, String... restParams) {
 		new Select(getElement(driver, getDynamicLocator(xpathExpression, restParams))).selectByVisibleText(itemText);
 	}
 	
